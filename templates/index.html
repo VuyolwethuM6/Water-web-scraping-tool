@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Western Cape</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-4">Western Cape</h1>
+
+        <div class="card mt-4">
+            <div class="card-body">
+                <h5 class="card-title">Western Cape Graph</h5>
+                <div class="card-text">
+                    {{ graph_html | safe }}
+                </div>
+            </div>
+        </div>
+
+        <div class="card mt-4">
+            <div class="card-body">
+                <h5 class="card-title">Western Cape Data</h5>
+                <p>Level This Week: {{ latest_data.this_week }}</p>
+                <p>Level Last Week: {{ latest_data.last_week }}</p>
+                <p>Level Last Year: {{ latest_data.last_year }}</p>
+                <p>Capacity: {{ latest_data.capacity }}</p>
+                <p>Retrieved: {{ latest_data.retrieved }}</p>
+            </div>
+        </div>
+
+        <div class="card mt-4">
+            <div class="card-body">
+                <h5 class="card-title">Western Cape Dams</h5>
+                <ul class="list-group">
+                    {% for _, row in df.iterrows() %}
+                        <li class="list-group-item">{{ row['Dam'] }}: {{ row['This Week'] }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
