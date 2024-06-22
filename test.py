@@ -57,9 +57,6 @@ else:
     # Create a DataFrame
     df = pd.DataFrame(rows, columns=['Dam', 'This Week', 'Last Week', 'Last Year'])
 
-    # Print DataFrame to verify content
-    # print(df)
-
     # Export DataFrame to Excel
     df.to_excel('western_cape_dam_levels.xlsx', index=False)
 
