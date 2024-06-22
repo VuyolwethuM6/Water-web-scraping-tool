@@ -21,7 +21,7 @@ tables = soup.find_all('table')
 # Inspect all tables to find the one with the required data
 for index, table in enumerate(tables):
     print(f"Table {index}:")
-    # print(table.prettify())
+
     print("\n")
 
 # Based on inspection, choose the correct table (assuming the required table is at index 1)
